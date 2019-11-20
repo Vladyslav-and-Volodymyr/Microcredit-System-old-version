@@ -38,5 +38,11 @@ namespace Microcredit_System
                 (sender as TextBox).Text = "";
             }
         }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            //Window1 wnd = new Window1();
+            //wnd.Show();
+        }
     }
 }
