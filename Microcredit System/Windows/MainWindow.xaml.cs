@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microcredit_System.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,8 +42,8 @@ namespace Microcredit_System
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            //Window1 wnd = new Window1();
-            //wnd.Show();
+            new ControlWindow().Show();
+            this.Close();
         }
     }
 }

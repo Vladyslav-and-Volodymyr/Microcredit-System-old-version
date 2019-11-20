@@ -64,9 +64,16 @@
     </ApplicationDefinition>
     <Compile Include="Funds\ExchangeStuff\Exchanger.cs" />
     <Compile Include="PublicStaticObjects.cs" />
-    <Compile Include="ViewModel\ItemMenu.cs" />
-    <Compile Include="ViewModel\SubItem.cs" />
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Windows\UserControlMenuItem.xaml.cs">
+      <DependentUpon>UserControlMenuItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ViewModel\ItemMenu.cs" />
+    <Compile Include="Windows\ViewModel\SubItem.cs" />
+    <Page Include="Windows\ControlWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -79,10 +86,17 @@
     <Compile Include="Funds\CurrentFunds.cs" />
     <Compile Include="Funds\DebtIncreaser.cs" />
     <Compile Include="Funds\Receipt.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Windows\ControlWindow.xaml.cs">
+      <DependentUpon>ControlWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\UserControlMenuItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Persons\ClientStuff\Client.cs" />
