@@ -21,14 +21,24 @@ namespace Microcredit_System.Windows
     /// </summary>
     public partial class UserControlMenuItem : UserControl
     {
-        internal UserControlMenuItem(ItemMenu itemMenu)
+        ControlWindow _context;
+        internal UserControlMenuItem(ItemMenu itemMenu, ControlWindow context)
         {
             InitializeComponent();
+
+            _context = context;
 
             ExpanderMenu.Visibility = itemMenu.SubItems == null ? Visibility.Collapsed : Visibility.Visible;
             ListViewItemMenu.Visibility = itemMenu == null ? Visibility.Visible : Visibility.Collapsed;
 
             this.DataContext = itemMenu;
         }
+
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _context.SwitchScreen(((SubItem)((ListView)sender).SelectedItem).Screen);
+        }
+
+
     }
 }

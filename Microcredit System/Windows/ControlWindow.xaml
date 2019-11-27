@@ -38,8 +38,11 @@
             <ScrollViewer HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1">
                 <StackPanel x:Name="Menu" Margin="10"/>
             </ScrollViewer>
-
         </Grid>
+        <StackPanel x:Name="StackPanelMain" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch">
+            
+        </StackPanel>
+
 
     </Grid>
 </Window>

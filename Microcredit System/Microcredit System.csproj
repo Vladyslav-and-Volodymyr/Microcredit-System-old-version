@@ -62,13 +62,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Funds\ExchangeStuff\AvailableFundsToExchange.cs" />
     <Compile Include="Funds\ExchangeStuff\Exchanger.cs" />
     <Compile Include="PublicStaticObjects.cs" />
+    <Compile Include="UserControlCustomer.xaml.cs">
+      <DependentUpon>UserControlCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlExchanges.xaml.cs">
+      <DependentUpon>UserControlExchanges.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlProviders.xaml.cs">
+      <DependentUpon>UserControlProviders.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\UserControlMenuItem.xaml.cs">
       <DependentUpon>UserControlMenuItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ViewModel\ItemMenu.cs" />
     <Compile Include="Windows\ViewModel\SubItem.cs" />
+    <Page Include="UserControlCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlExchanges.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlProviders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\ControlWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -131,6 +153,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Windows\UserControl\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CurrentFunds.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -26,21 +26,12 @@ namespace Microcredit_System.Windows
             InitializeComponent();
 
             var menuRegister = new List<SubItem>();
-            menuRegister.Add(new SubItem("Customer"));
-            menuRegister.Add(new SubItem("Providers"));
+            menuRegister.Add(new SubItem("Customer", new UserControlCustomers()));
+            menuRegister.Add(new SubItem("Providers", new UserControlProviders()));
             menuRegister.Add(new SubItem("Employees"));
             menuRegister.Add(new SubItem("Products"));
 
             var item1 = new ItemMenu("Register", menuRegister, PackIconKind.Register);
-
-            var menuSchedule = new List<SubItem>();
-            menuSchedule.Add(new SubItem("Customer"));
-            menuSchedule.Add(new SubItem("Providers"));
-            menuSchedule.Add(new SubItem("Employees"));
-            menuSchedule.Add(new SubItem("Products"));
-
-            var item2 = new ItemMenu("Schedule", menuSchedule, PackIconKind.Schedule);
-
 
             var menuClient = new List<SubItem>();
             menuClient.Add(new SubItem("Client List"));
@@ -52,7 +43,7 @@ namespace Microcredit_System.Windows
 
             var menuFinances = new List<SubItem>();
             menuFinances.Add(new SubItem("Current balance"));
-            menuFinances.Add(new SubItem("Exchange"));
+            menuFinances.Add(new SubItem("Exchange", new UserControlExchanges()));
 
             var item4 = new ItemMenu("Finances", menuFinances, PackIconKind.ScaleBalance);
 
@@ -60,10 +51,21 @@ namespace Microcredit_System.Windows
             /// var item0 = new ItemMenu("Dashboard", new List<SubItem>(), PackIconKind.ViewDashboard);
 
             // Menu.Children.Add(new UserControlMenuItem(item0));
-            Menu.Children.Add(new UserControlMenuItem(item1));
-            Menu.Children.Add(new UserControlMenuItem(item2));
-            Menu.Children.Add(new UserControlMenuItem(item3));
-            Menu.Children.Add(new UserControlMenuItem(item4));
+            Menu.Children.Add(new UserControlMenuItem(item1, this));
+            Menu.Children.Add(new UserControlMenuItem(item3, this));
+            Menu.Children.Add(new UserControlMenuItem(item4, this));
+        }
+
+        internal void SwitchScreen(object sender)
+        {
+            var screen = ((UserControl) sender);
+
+            if (screen != null)
+            {
+                StackPanelMain.Children.Clear();
+                StackPanelMain.Children.Add(screen);
+
+            }
         }
     }
 }
