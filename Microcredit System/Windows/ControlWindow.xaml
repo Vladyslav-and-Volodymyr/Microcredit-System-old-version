@@ -21,7 +21,11 @@
         <materialDesign:ColorZone Mode="PrimaryMid" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
 
             <Grid>
-                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" HorizontalAlignment="Right"/>
+                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" HorizontalAlignment="Right">
+                    <StackPanel>
+                        <Button ToolTip="One" Click="Button_LogOut_Click">Log out</Button>
+                    </StackPanel>
+                </materialDesign:PopupBox>
             </Grid>
         </materialDesign:ColorZone>
 
@@ -42,7 +46,5 @@
         <StackPanel x:Name="StackPanelMain" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch">
             
         </StackPanel>
-
-
     </Grid>
 </Window>

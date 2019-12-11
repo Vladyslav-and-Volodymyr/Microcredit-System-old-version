@@ -27,8 +27,8 @@
         <Grid Width="200" Height="220" VerticalAlignment="Bottom" Margin="0,100">
             <TextBlock Text="LOGIN"  Margin="5" Foreground="Gray" FontSize="18"  HorizontalAlignment="Center"/>
             <StackPanel HorizontalAlignment="Center" Margin="10">
-                <TextBox materialDesign:HintAssist.Hint="ID" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,20" Width="200"   />
-                <PasswordBox materialDesign:HintAssist.Hint="PASSWORD" Style="{StaticResource  MaterialDesignFloatingHintPasswordBox}" Margin="0,10"    />
+                <TextBox Name="txtLogin" materialDesign:HintAssist.Hint="Login" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,20" Width="200"   />
+                <PasswordBox Name="txtPassword" materialDesign:HintAssist.Hint="PASSWORD" Style="{StaticResource  MaterialDesignFloatingHintPasswordBox}" Margin="0,10"    />
             </StackPanel>
         </Grid>
 

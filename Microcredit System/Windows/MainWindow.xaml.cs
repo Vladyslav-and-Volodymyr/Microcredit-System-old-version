@@ -1,4 +1,6 @@
-﻿using Microcredit_System.Windows;
+﻿using Microcredit_System.ControlSystem.DatabaseStuff;
+using Microcredit_System.ControlSystem.Persons.EmployeeStuff;
+using Microcredit_System.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,29 +23,26 @@ namespace Microcredit_System
     /// </summary>
     public partial class MainWindow : Window
     {
+        ControlSystem.ControlSystem control = new ControlSystem.ControlSystem();
+
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void LoginTextbox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if ((sender as TextBox).IsFocused == false && (sender as TextBox).Text == "")
-                (sender as TextBox).Text = "keke";
-        }
-
-        private void LoginTextbox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if ((sender as TextBox).Text == "keke")
-            {
-                (sender as TextBox).Text = "";
-            }
+            Database.DB.Init();
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            new ControlWindow().Show();
-            this.Close();
+            Employee employee = control.LogIn(txtLogin.Text, txtPassword.Password);
+            if(employee == null)
+            {
+                MessageBox.Show("Wrong password", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                new ControlWindow(control, employee).Show();
+                this.Close();
+            }
         }
     }
 }

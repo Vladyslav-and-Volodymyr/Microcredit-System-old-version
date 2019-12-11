@@ -1,0 +1,6 @@
+﻿{
+  "login": "root",
+  "password": "keklelkek",
+  "server": "localhost"
+  "database": "microcredit"
+}

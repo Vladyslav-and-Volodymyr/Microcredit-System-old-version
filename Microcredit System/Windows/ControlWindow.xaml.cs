@@ -1,4 +1,5 @@
 ﻿using MaterialDesignThemes.Wpf;
+using Microcredit_System.ControlSystem.Persons.EmployeeStuff;
 using Microcredit_System.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,15 @@ namespace Microcredit_System.Windows
     /// </summary>
     public partial class ControlWindow : Window
     {
-        public ControlWindow()
+        private ControlSystem.ControlSystem control;
+        private Employee employee;
+
+        internal ControlWindow(ControlSystem.ControlSystem control, Employee employee)
         {
             InitializeComponent();
+
+            this.control = control;
+            this.employee = employee;
 
             var menuRegister = new List<SubItem>();
             menuRegister.Add(new SubItem("Customer", new UserControlCustomers()));
@@ -40,7 +47,6 @@ namespace Microcredit_System.Windows
 
             var item3 = new ItemMenu("Clients", menuClient, PackIconKind.Person);
 
-
             var menuFinances = new List<SubItem>();
             menuFinances.Add(new SubItem("Current balance"));
             menuFinances.Add(new SubItem("Exchange", new UserControlExchanges()));
@@ -51,8 +57,12 @@ namespace Microcredit_System.Windows
             /// var item0 = new ItemMenu("Dashboard", new List<SubItem>(), PackIconKind.ViewDashboard);
 
             // Menu.Children.Add(new UserControlMenuItem(item0));
-            Menu.Children.Add(new UserControlMenuItem(item1, this));
-            Menu.Children.Add(new UserControlMenuItem(item3, this));
+
+            if (employee is Admin)
+            {
+                Menu.Children.Add(new UserControlMenuItem(item1, this));
+                Menu.Children.Add(new UserControlMenuItem(item3, this));
+            }
             Menu.Children.Add(new UserControlMenuItem(item4, this));
         }
 
@@ -66,6 +76,12 @@ namespace Microcredit_System.Windows
                 StackPanelMain.Children.Add(screen);
 
             }
+        }
+
+        private void Button_LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            new MainWindow().Show();
+            this.Close();
         }
     }
 }
