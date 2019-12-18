@@ -71,8 +71,8 @@
     <Compile Include="UserControlExchanges.xaml.cs">
       <DependentUpon>UserControlExchanges.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlProviders.xaml.cs">
-      <DependentUpon>UserControlProviders.xaml</DependentUpon>
+    <Compile Include="UserControlGiveCredit.xaml.cs">
+      <DependentUpon>UserControlGiveCredit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\UserControlMenuItem.xaml.cs">
       <DependentUpon>UserControlMenuItem.xaml</DependentUpon>
@@ -87,7 +87,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlProviders.xaml">
+    <Page Include="UserControlGiveCredit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,6 +158,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="CurrentFunds.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CreditExpress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CreditExpressNoBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CreditExpressIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

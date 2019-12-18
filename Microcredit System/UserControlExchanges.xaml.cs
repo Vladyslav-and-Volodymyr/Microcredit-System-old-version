@@ -39,9 +39,9 @@ namespace Microcredit_System
             txtEur.Text = availableFundsToExchange.Eur.ToString();
             txtUsd.Text = availableFundsToExchange.Usd.ToString();
 
-            txtEurRate.Text = CurrencyRatesInformation.getCurrencyRate("eur");
-            txtUsdRate.Text = CurrencyRatesInformation.getCurrencyRate("usd");
-            txtPlnRate.Text = "1";
+            //txtEurRate.Text = CurrencyRatesInformation.getCurrencyRate("eur");
+            //txtUsdRate.Text = CurrencyRatesInformation.getCurrencyRate("usd");
+            //txtPlnRate.Text = "1";
         }
 
         private AvailableFundsToExchange ReadAvailableFunds()

@@ -25,40 +25,34 @@ namespace Microcredit_System.Windows
         {
             InitializeComponent();
 
-            var menuRegister = new List<SubItem>();
-            menuRegister.Add(new SubItem("Customer", new UserControlCustomers()));
-            menuRegister.Add(new SubItem("Providers", new UserControlProviders()));
-            menuRegister.Add(new SubItem("Employees"));
-            menuRegister.Add(new SubItem("Products"));
+            var _menuClient = new List<SubItem>();
+            _menuClient.Add(new SubItem("Client List"));
+            _menuClient.Add(new SubItem("Add new Client"));
+            _menuClient.Add(new SubItem("Debtors"));
 
-            var item1 = new ItemMenu("Register", menuRegister, PackIconKind.Register);
-
-            var menuClient = new List<SubItem>();
-            menuClient.Add(new SubItem("Client List"));
-            menuClient.Add(new SubItem("Add new Client"));
-            menuClient.Add(new SubItem("Debtors"));
-
-            var item3 = new ItemMenu("Clients", menuClient, PackIconKind.Person);
+            var _itemClient = new ItemMenu("Clients", _menuClient, PackIconKind.Person);
 
 
-            var menuFinances = new List<SubItem>();
-            menuFinances.Add(new SubItem("Current balance"));
-            menuFinances.Add(new SubItem("Exchange", new UserControlExchanges()));
+            var _menuFinances = new List<SubItem>();
+            _menuFinances.Add(new SubItem("Current balance"));
+            _menuFinances.Add(new SubItem("Exchange", new UserControlExchanges()));
+            _menuFinances.Add(new SubItem("Give credit", new UserControlGiveCredit()));
+            _menuFinances.Add(new SubItem("Debt recovery"));
 
-            var item4 = new ItemMenu("Finances", menuFinances, PackIconKind.ScaleBalance);
+            var _itemFinances = new ItemMenu("Finances", _menuFinances, PackIconKind.ScaleBalance);
 
             /// var dash = new List<SubItem>(); 
             /// var item0 = new ItemMenu("Dashboard", new List<SubItem>(), PackIconKind.ViewDashboard);
 
             // Menu.Children.Add(new UserControlMenuItem(item0));
-            Menu.Children.Add(new UserControlMenuItem(item1, this));
-            Menu.Children.Add(new UserControlMenuItem(item3, this));
-            Menu.Children.Add(new UserControlMenuItem(item4, this));
+
+            Menu.Children.Add(new UserControlMenuItem(_itemClient, this));
+            Menu.Children.Add(new UserControlMenuItem(_itemFinances, this));
         }
 
         internal void SwitchScreen(object sender)
         {
-            var screen = ((UserControl) sender);
+            var screen = ((UserControl)sender);
 
             if (screen != null)
             {
@@ -66,6 +60,15 @@ namespace Microcredit_System.Windows
                 StackPanelMain.Children.Add(screen);
 
             }
+        }
+
+      
+   
+        private void ButtonPopUpLogout_Click(object sender, RoutedEventArgs e)
+        {
+            // System.Windows.Application.Current.Shutdown();
+            Application.Current.Shutdown();
+
         }
     }
 }

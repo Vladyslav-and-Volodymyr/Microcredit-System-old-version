@@ -45,5 +45,6 @@ namespace Microcredit_System
             new ControlWindow().Show();
             this.Close();
         }
+      
+        }
     }
-}

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Microcredit_System
 {
     /// <summary>
-    /// Interaction logic for UserControlProviders.xaml
+    /// Interaction logic for UserControlGiveCredit.xaml
     /// </summary>
-    public partial class UserControlProviders : UserControl
+    public partial class UserControlGiveCredit : UserControl
     {
-        public UserControlProviders()
+        public UserControlGiveCredit()
         {
             InitializeComponent();
         }

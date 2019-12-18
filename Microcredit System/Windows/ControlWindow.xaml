@@ -6,33 +6,46 @@
         xmlns:local="clr-namespace:Microcredit_System.Windows"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Microcredit System Control" Height="900" Width="1800" WindowState="Maximized" MinHeight="720" MinWidth="1080">
+        Title="Microcredit System Control" Height="900" Width="1800" WindowState="Maximized" MinHeight="720" MinWidth="1080" Icon="/Microcredit System;component/images/CreditExpressIcon.png">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height ="auto" />
+            <RowDefinition Height ="60" />
             <RowDefinition Height ="*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="350"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <materialDesign:ColorZone Mode="PrimaryMid" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
+        <materialDesign:ColorZone Mode="PrimaryMid" Grid.ColumnSpan="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
-            <Grid>
-                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" HorizontalAlignment="Right"/>
-            </Grid>
+            <StackPanel>
+                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" HorizontalAlignment="Right" Margin="15,15" StaysOpen="False">
+                    <StackPanel Width="150">
+                        <Button Content="Account"/>
+                        <Button Content="Settings"/>
+                        <Button Content="Help"/>
+                        <Separator/>
+                        <Button x:Name="ButtonPopUpLogout" Content="Logout" Click="ButtonPopUpLogout_Click"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </StackPanel>
         </materialDesign:ColorZone>
 
         <Grid HorizontalAlignment="Stretch" Grid.Row="1" Background="{StaticResource PrimaryHueMidBrush}">
 
             <Grid.RowDefinitions>
-                <RowDefinition Height ="70" />
-                <RowDefinition Height ="720" />
+                <RowDefinition Height ="200"/>
+                <RowDefinition Height ="700" />
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" Background="GhostWhite">
-                <TextBox Text="LOGO HERE" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Image>
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="300"  UriSource="/images/CreditExpress.png" />
+                    </Image.Source>
+                </Image>
+                
             </Grid>
 
             <ScrollViewer HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1">
