@@ -27,14 +27,14 @@ namespace Microcredit_System.Windows
 
             var _menuClient = new List<SubItem>();
             _menuClient.Add(new SubItem("Client List"));
-            _menuClient.Add(new SubItem("Add new Client"));
+            _menuClient.Add(new SubItem("Add new Client", new UserControlAddClient()));
             _menuClient.Add(new SubItem("Debtors"));
 
             var _itemClient = new ItemMenu("Clients", _menuClient, PackIconKind.Person);
 
 
             var _menuFinances = new List<SubItem>();
-            _menuFinances.Add(new SubItem("Current balance"));
+            _menuFinances.Add(new SubItem("Current balance", new UserControlCurrentBalance()));
             _menuFinances.Add(new SubItem("Exchange", new UserControlExchanges()));
             _menuFinances.Add(new SubItem("Give credit", new UserControlGiveCredit()));
             _menuFinances.Add(new SubItem("Debt recovery"));

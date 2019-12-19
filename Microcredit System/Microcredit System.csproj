@@ -65,6 +65,12 @@
     <Compile Include="Funds\ExchangeStuff\AvailableFundsToExchange.cs" />
     <Compile Include="Funds\ExchangeStuff\Exchanger.cs" />
     <Compile Include="PublicStaticObjects.cs" />
+    <Compile Include="UserControlAddClient.xaml.cs">
+      <DependentUpon>UserControlAddClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlCurrentBalance.xaml.cs">
+      <DependentUpon>UserControlCurrentBalance.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlCustomer.xaml.cs">
       <DependentUpon>UserControlCustomer.xaml</DependentUpon>
     </Compile>
@@ -79,6 +85,14 @@
     </Compile>
     <Compile Include="Windows\ViewModel\ItemMenu.cs" />
     <Compile Include="Windows\ViewModel\SubItem.cs" />
+    <Page Include="UserControlAddClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlCurrentBalance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControlCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
